@@ -6,6 +6,14 @@ import sdk, {
   SignIn as SignInCore,
   type Context,
 } from "@farcaster/frame-sdk";
+import Image from "next/image";
+import { 
+  DAILY_ALLOWANCE,
+  NEYNAR_API_KEY,
+  NEYNAR_CLIENT_ID,
+  START_DATE,
+  END_DATE
+} from "~/lib/constants";
 import {
   Card,
   CardHeader,
@@ -122,9 +130,11 @@ function NutTrackerCard({ context }: { context: Context.FrameContext }) {
           <div className="space-y-2">
             <Label className="text-purple-200">Your Profile</Label>
             <div className="flex items-center gap-3">
-              <img 
-                src={context.requesterPfpUrl} 
-                alt="Profile" 
+              <Image 
+                src={context.requesterPfpUrl}
+                alt="Profile"
+                width={40}
+                height={40}
                 className="w-10 h-10 rounded-full"
               />
               <div>
