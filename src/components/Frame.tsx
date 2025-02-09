@@ -103,7 +103,7 @@ function NutTrackerCard({ context }: { context: Context.FrameContext }) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const fid = session?.user?.fid || context.requesterFid;
+      const fid = session?.user?.fid || context.fid;
       if (fid) fetchNutStats(fid);
     }, 1000);
 
