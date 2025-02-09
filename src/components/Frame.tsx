@@ -130,8 +130,8 @@ function NutTrackerCard({ context }: { context: Context.FrameContext }) {
           <div className="space-y-2">
             <Label className="text-purple-200">Your Profile</Label>
             <div className="flex items-center gap-3">
-              <Image 
-                src={context.requester.user.pfpUrl
+              <Image
+                src={context.requester.user.pfpUrl}
                 alt="Profile"
                 width={40}
                 height={40}
