@@ -103,7 +103,7 @@ function NutTrackerCard({ context }: { context: Context.FrameContext }) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const fid = session?.user?.fid || context.requester.fid;
+      const fid = session?.user?.fid || context.requesterFid;
       if (fid) fetchNutStats(fid);
     }, 1000);
 
@@ -131,7 +131,7 @@ function NutTrackerCard({ context }: { context: Context.FrameContext }) {
             <Label className="text-purple-200">Your Profile</Label>
             <div className="flex items-center gap-3">
               <Image 
-                src={context.requester.pfpUrl}
+                src={context.requesterUser?.pfpUrl}
                 alt="Profile"
                 width={40}
                 height={40}
@@ -140,7 +140,7 @@ function NutTrackerCard({ context }: { context: Context.FrameContext }) {
               <div>
                 <p className="font-medium">FID: {context.requesterFid}</p>
                 <p className="text-sm text-purple-300">
-                  {context.requester.displayName}
+                  {context.requesterUser?.displayName}
                 </p>
               </div>
             </div>
